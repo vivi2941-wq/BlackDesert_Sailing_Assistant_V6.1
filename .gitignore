@@ -1,0 +1,79 @@
+# 編譯輸出
+dist/
+build/
+*.spec
+
+# 嵌入的 Git 倉庫
+BDO-exchange-assistant/
+BDO_Sailing_Assistant_V6.1/
+
+# 虛擬環境
+.venv/
+venv/
+.build-venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 玩家數據（隱私）
+inventory.json
+inventory_catalog.json
+inventory_ledger.json
+inventory_test.json
+inventory_test_ledger.json
+inventory_baseline.json
+inventory_mode.json
+
+# 玩家學習記憶（隱私）
+data/mature_knowledge/
+data/ocr_debug.json
+data/ocr_structured_debug.json
+data/ocr_roi_debug/
+
+# 玩家個人設定（隱私）
+player_item_aliases.json
+player_point_groups.json
+player_point_preferences.json
+player_route_ui.json
+player_settings.json
+
+# 玩家確認記錄（隱私）
+manual_confirmations.json
+manual_repairs.json
+ocr_evidence_identity_corrections.json
+ratio_confirmations.json
+ratio_current_batch_corrections.json
+ratio_manual_overrides.json
+current_batch_ocr.json
+layout_assignments.json
+layout_health_last.json
+
+# 玩家路線數據（隱私）
+state.json
+route_learning_history.json
+route_timing_history.json
+route_templates.json
+
+# Python 相關
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE 相關
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 系統文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 日誌和臨時文件
+*.log
+*.tmp
+temp_*/
