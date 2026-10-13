@@ -70,7 +70,7 @@
  [],
  False,
  False,
- 1791225505,
+ 1791807254,
  [('runw.exe',
    'C:\\Users\\User\\Desktop\\AI修改測式\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\runw.exe',
    'EXECUTABLE')],

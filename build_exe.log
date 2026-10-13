@@ -1,4 +1,4 @@
-Builder started at 2026/10/06 秅  2:38:09.60 
+Builder started at 2026/10/12 秅 20:13:50.93 
 Working folder: C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE 
  
 Requirement already satisfied: pip in .\.build-venv\Lib\site-packages (26.2.1)
@@ -26,14 +26,94 @@ Requirement already satisfied: colorama in .\.build-venv\Lib\site-packages (from
 {
   "ok": true,
   "root": "C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE",
-  "file_count": 82,
+  "file_count": 162,
   "issues": [],
   "files": [
+    ".git/COMMIT_EDITMSG",
+    ".git/FETCH_HEAD",
+    ".git/HEAD",
+    ".git/ORIG_HEAD",
+    ".git/config",
+    ".git/description",
+    ".git/hooks/applypatch-msg.sample",
+    ".git/hooks/commit-msg.sample",
+    ".git/hooks/fsmonitor-watchman.sample",
+    ".git/hooks/post-update.sample",
+    ".git/hooks/pre-applypatch.sample",
+    ".git/hooks/pre-commit.sample",
+    ".git/hooks/pre-merge-commit.sample",
+    ".git/hooks/pre-push.sample",
+    ".git/hooks/pre-rebase.sample",
+    ".git/hooks/pre-receive.sample",
+    ".git/hooks/prepare-commit-msg.sample",
+    ".git/hooks/push-to-checkout.sample",
+    ".git/hooks/sendemail-validate.sample",
+    ".git/hooks/update.sample",
+    ".git/index",
+    ".git/info/exclude",
+    ".git/info/refs",
+    ".git/logs/HEAD",
+    ".git/logs/refs/heads/master",
+    ".git/logs/refs/remotes/origin/HEAD",
+    ".git/logs/refs/remotes/origin/main",
+    ".git/logs/refs/remotes/origin/master",
+    ".git/objects/03/437fa0cb6b028f714b9a0dedcfebd7671eb0d9",
+    ".git/objects/06/ae9a16425c2df06fef3d012414482497fbbbd2",
+    ".git/objects/16/9ada33e468daf4be6a7b800a3a0a8c415a0361",
+    ".git/objects/20/8163d873e16b3f3f3b0fb4c117567377ef764b",
+    ".git/objects/21/17bceb0a984514261cc9504c38d188c8a1fbd1",
+    ".git/objects/29/6c5f6111d7db8695a091e7ba4aa753e5262262",
+    ".git/objects/2b/abb9f6fef75e25ed29d7f275ab32d211da3edb",
+    ".git/objects/2d/a3f0298b475520303bdc41295fd4fe18899415",
+    ".git/objects/2d/a44e5c82bfe06f17c11cf33a373e99b41ccffb",
+    ".git/objects/35/4ea6ec1873b94bec9a5bdef8b4f3c176fd6a4f",
+    ".git/objects/4c/e355fc776fcc5d12272b227a72154689ab707e",
+    ".git/objects/52/32c0e740b373dda09372c4ed8e35094ca04e3d",
+    ".git/objects/5a/3a57c9a233f6c81ef3dc1898485f00a66ab024",
+    ".git/objects/61/be3bb5b2e70395565de540bda31393c589c96f",
+    ".git/objects/67/a05cbba99a4c141abc3ad1e67e73860c5b26e1",
+    ".git/objects/69/8576e9cfc8137cc7305e05bea05f9e7072bf48",
+    ".git/objects/6e/f2a4f7874cc24e790add8998536d54311f231f",
+    ".git/objects/6f/9509c88bed7080d496fc5e1d87a9315e30549d",
+    ".git/objects/71/6db3003d8e4789db88d6859bbc65adb28a12b4",
+    ".git/objects/75/6f85be2b96eb564e0e12ffe895f91a17cc1e52",
+    ".git/objects/78/cf6c98639343842f85b32337d983d88d76e16f",
+    ".git/objects/84/464c53dbe7f9dda929cdc462cfbd4369ede19c",
+    ".git/objects/89/b2d187759f6fee5568ef046668f26e7e5f3bee",
+    ".git/objects/91/cb862962ed14e79ee22cb32159e3f00bf2d668",
+    ".git/objects/9d/f0d6f0b36b7b39ecad1ef9fd57f18d2a1290c2",
+    ".git/objects/a1/d5dd406f30c446a71b4438f23c3f95434179b0",
+    ".git/objects/a2/a7cbcd526ecb28e8b37a13a0b1ae05473f4a8c",
+    ".git/objects/a4/b65983e7a0d8b97049adfa982806f58faa48c7",
+    ".git/objects/a5/204a3fd59298e77b8514fd062693349cb8d772",
+    ".git/objects/a9/351a340cf8639c1e313e61f712ce347cb73530",
+    ".git/objects/ad/7f2d9c6fcc5970acbfe780573ab16a15e18a4c",
+    ".git/objects/b6/d21868d8d6c0fdb08a52a0ef0bb6a4f9bf6e19",
+    ".git/objects/bc/375b11e2ed1c7709b50e07172c7ff300719e42",
+    ".git/objects/c0/fbb236a5097fa4811b9d27c1aaaf6bb77d269f",
+    ".git/objects/c3/513a2a647eddeb2fbfc8ce76b44dbbffd8a96f",
+    ".git/objects/d4/6e17ae926bad4821a65386b1f3e5fea3e6bc3d",
+    ".git/objects/d8/c61f8760d9f82f699f1954cf07c5212aec17b5",
+    ".git/objects/info/packs",
+    ".git/objects/pack/multi-pack-index",
+    ".git/objects/pack/pack-be80cc9094be61e2993b26560c87a688dd61008c.idx",
+    ".git/objects/pack/pack-be80cc9094be61e2993b26560c87a688dd61008c.pack",
+    ".git/objects/pack/pack-be80cc9094be61e2993b26560c87a688dd61008c.rev",
+    ".git/refs/heads/master",
+    ".git/refs/remotes/origin/HEAD",
+    ".git/refs/remotes/origin/main",
+    ".git/refs/remotes/origin/master",
+    ".git/refs/tags/V6.1",
+    ".gitattributes",
+    ".github/ISSUE_TEMPLATE/ocr-report.md",
+    ".gitignore",
     "BDO_Sailing_Assistant.spec",
+    "BDO_Sailing_Assistant_V6.1_Player.zip",
     "BUILD_EXE.cmd",
     "BUILD_EXE_CORE.cmd",
     "PUBLIC_PLAYER_RELEASE.json",
     "PUBLIC_RELEASE_MANIFEST.json",
+    "README.md",
     "README_PUBLIC.txt",
     "V5.82.0_癨厩策Θ剪俱.txt",
     "V5.84.0_龟代タ俱.txt",
@@ -113,13 +193,13 @@ Requirement already satisfied: colorama in .\.build-venv\Lib\site-packages (from
     "堵‵も_み砞璸籔セユ钡.md"
   ]
 }
-91 INFO: PyInstaller: 6.22.3, contrib hooks: 2026.8
-91 INFO: Python: 3.11.9
-110 INFO: Platform: Windows-10-10.0.26200-SP0
-110 INFO: Python environment: C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\.build-venv
-111 INFO: Removing temporary files and cleaning cache in C:\Users\User\AppData\Local\pyinstaller
-228 WARNING: Failed to collect submodules for 'onnxruntime.quantization' because importing 'onnxruntime.quantization' raised: ModuleNotFoundError: No module named 'onnx'
-1217 INFO: Module search paths (PYTHONPATH):
+221 INFO: PyInstaller: 6.22.3, contrib hooks: 2026.8
+221 INFO: Python: 3.11.9
+238 INFO: Platform: Windows-10-10.0.26200-SP0
+238 INFO: Python environment: C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\.build-venv
+241 INFO: Removing temporary files and cleaning cache in C:\Users\User\AppData\Local\pyinstaller
+321 WARNING: Failed to collect submodules for 'onnxruntime.quantization' because importing 'onnxruntime.quantization' raised: ModuleNotFoundError: No module named 'onnx'
+2782 INFO: Module search paths (PYTHONPATH):
 ['C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE',
  'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python311\\python311.zip',
  'C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python311\\DLLs',
@@ -128,229 +208,229 @@ Requirement already satisfied: colorama in .\.build-venv\Lib\site-packages (from
  'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv',
  'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages',
  'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE']
-1488 INFO: Appending 'binaries' from .spec
-1488 INFO: Appending 'datas' from .spec
-1516 INFO: checking Analysis
-1516 INFO: Building Analysis because Analysis-00.toc is non existent
-1516 INFO: Looking for Python shared library...
-1517 INFO: Using Python shared library: C:\Users\User\AppData\Local\Programs\Python\Python311\python311.dll
-1517 INFO: Running Analysis Analysis-00.toc
-1517 INFO: Target bytecode optimization level: 0
-1517 INFO: Initializing module dependency graph...
-1517 INFO: Initializing module graph hook caches...
-1528 INFO: Analyzing modules for base_library.zip ...
-2215 INFO: Processing standard module hook 'hook-heapq.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-2274 INFO: Processing standard module hook 'hook-encodings.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-3356 INFO: Processing standard module hook 'hook-math.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-3480 INFO: Processing standard module hook 'hook-pickle.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-4464 INFO: Caching module dependency graph...
-4488 INFO: Analyzing C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\app.py
-4995 INFO: Processing standard module hook 'hook-difflib.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-5009 INFO: Processing standard module hook 'hook-platform.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-5011 INFO: Processing pre-find-module-path hook 'hook-tkinter.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path'
-5012 INFO: TclTkInfo: initializing cached Tcl/Tk info...
-5481 INFO: Processing standard module hook 'hook-_tkinter.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-5577 INFO: Processing standard module hook 'hook-cv2.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
-5909 INFO: Processing standard module hook 'hook-numpy.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-6177 INFO: Processing pre-safe-import-module hook 'hook-typing_extensions.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
-6178 INFO: SetuptoolsInfo: initializing cached setuptools info...
-6794 INFO: Processing standard module hook 'hook-multiprocessing.util.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-6876 INFO: Processing standard module hook 'hook-xml.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-7124 INFO: Processing standard module hook 'hook-_ctypes.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-7601 INFO: Processing standard module hook 'hook-sysconfig.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-7951 INFO: Processing standard module hook 'hook-webbrowser.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-9138 INFO: Processing standard module hook 'hook-onnxruntime.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
-9197 INFO: Processing pre-safe-import-module hook 'hook-tensorflow.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\pre_safe_import_module'
-9204 INFO: Processing standard module hook 'hook-PIL.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-9259 INFO: Processing standard module hook 'hook-PIL.Image.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-9646 INFO: Processing standard module hook 'hook-xml.etree.cElementTree.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-9734 INFO: Processing standard module hook 'hook-PIL.ImageFilter.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-9993 INFO: Processing standard module hook 'hook-shapely.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
-10151 INFO: Analyzing hidden import 'onnxruntime.capi.convert_npz_to_onnx_adapter'
-10153 INFO: Analyzing hidden import 'onnxruntime.datasets'
-10154 INFO: Analyzing hidden import 'onnxruntime.tools'
-10156 INFO: Analyzing hidden import 'onnxruntime.tools.check_onnx_model_mobile_usability'
-10174 INFO: Analyzing hidden import 'onnxruntime.tools.convert_onnx_models_to_ort'
-10194 INFO: Analyzing hidden import 'onnxruntime.tools.make_dynamic_shape_fixed'
-10196 INFO: Analyzing hidden import 'onnxruntime.tools.offline_tuning'
-10200 INFO: Analyzing hidden import 'onnxruntime.tools.onnx_randomizer'
-10201 INFO: Analyzing hidden import 'onnxruntime.tools.onnxruntime_test'
-10208 INFO: Analyzing hidden import 'onnxruntime.tools.optimize_onnx_model'
-10209 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py'
-10209 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs'
-10209 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.ArgType'
-10210 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.ArgTypeAndIndex'
-10235 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Attribute'
-10242 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.AttributeType'
-10242 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Checkpoint'
-10245 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DeprecatedKernelCreateInfos'
-10247 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DeprecatedNodeIndexAndKernelDefHash'
-10248 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DeprecatedSessionState'
-10250 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DeprecatedSubGraphSessionState'
-10251 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Dimension'
-10254 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DimensionValue'
-10255 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DimensionValueType'
-10255 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.EdgeEnd'
-10256 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.FloatProperty'
-10258 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Graph'
-10264 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.InferenceSession'
-10266 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.IntProperty'
-10268 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.KernelTypeStrArgsEntry'
-10270 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.KernelTypeStrResolver'
-10271 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.MapType'
-10273 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Model'
-10277 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.ModuleState'
-10279 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Node'
-10286 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.NodeEdge'
-10289 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.NodeType'
-10289 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.NodesToOptimizeIndices'
-10292 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.OpIdKernelTypeStrArgsEntry'
-10294 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.OperatorSetId'
-10295 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.OptimizerGroup'
-10298 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.ParameterOptimizerState'
-10300 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.PropertyBag'
-10303 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.RuntimeOptimizationRecord'
-10305 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.RuntimeOptimizationRecordContainerEntry'
-10307 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.RuntimeOptimizations'
-10308 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.SequenceType'
-10310 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Shape'
-10312 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.SparseTensor'
-10314 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.StringProperty'
-10315 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.StringStringEntry'
-10317 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Tensor'
-10322 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.TensorDataType'
-10322 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.TensorTypeAndShape'
-10324 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.TypeInfo'
-10325 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.TypeInfoValue'
-10326 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.ValueInfo'
-10328 INFO: Analyzing hidden import 'onnxruntime.tools.pytorch_export_contrib_ops'
-10330 INFO: Analyzing hidden import 'onnxruntime.tools.qdq_helpers'
-10330 INFO: Analyzing hidden import 'onnxruntime.tools.qdq_helpers.optimize_qdq_model'
-10331 INFO: Analyzing hidden import 'onnxruntime.tools.reduced_build_config_parser'
-10335 INFO: Analyzing hidden import 'onnxruntime.tools.remove_initializer_from_input'
-10336 INFO: Analyzing hidden import 'onnxruntime.tools.symbolic_shape_infer'
-10422 INFO: Processing pre-safe-import-module hook 'hook-packaging.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
-10442 INFO: Analyzing hidden import 'onnxruntime.tools.update_onnx_opset'
-10443 INFO: Analyzing hidden import 'onnxruntime.transformers.affinity_helper'
-10444 INFO: Analyzing hidden import 'onnxruntime.transformers.benchmark'
-10457 INFO: Analyzing hidden import 'onnxruntime.transformers.benchmark_helper'
-10467 INFO: Analyzing hidden import 'onnxruntime.transformers.bert_perf_test'
-10475 INFO: Analyzing hidden import 'onnxruntime.transformers.bert_test_data'
-10483 INFO: Analyzing hidden import 'onnxruntime.transformers.compare_bert_results'
-10486 INFO: Analyzing hidden import 'onnxruntime.transformers.constants'
-10486 INFO: Analyzing hidden import 'onnxruntime.transformers.convert_generation'
-10591 INFO: Analyzing hidden import 'onnxruntime.transformers.convert_tf_models_to_pytorch'
-10596 INFO: Analyzing hidden import 'onnxruntime.transformers.convert_to_packing_mode'
-10604 INFO: Analyzing hidden import 'onnxruntime.transformers.dynamo_onnx_helper'
-10608 INFO: Analyzing hidden import 'onnxruntime.transformers.float16'
-10616 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_attention'
-10635 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_attention_clip'
-10640 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_attention_sam2'
-10647 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_attention_unet'
-10665 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_attention_vae'
-10670 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_bart_attention'
-10678 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_base'
-10681 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_bias_add'
-10682 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_biasgelu'
-10683 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_biassplitgelu'
-10685 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_conformer_attention'
-10689 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_constant_fold'
-10692 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_embedlayer'
-10702 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_fastgelu'
-10709 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gelu'
-10712 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gelu_approximation'
-10713 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gemmfastgelu'
-10715 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gpt_attention'
-10722 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gpt_attention_megatron'
-10726 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gpt_attention_no_past'
-10731 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_group_norm'
-10736 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_layernorm'
-10743 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_mha_dit'
-10749 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_mha_mmdit'
-10756 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_nhwc_conv'
-10759 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_options'
-10763 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_qordered_attention'
-10769 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_qordered_gelu'
-10770 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_qordered_layernorm'
-10772 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_qordered_matmul'
-10775 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_quickgelu'
-10776 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_reshape'
-10778 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_rotary_attention'
-10816 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_shape'
-10819 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_simplified_layernorm'
-10822 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_skip_group_norm'
-10825 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_skiplayernorm'
-10829 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_transpose'
-10831 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_utils'
-10836 INFO: Analyzing hidden import 'onnxruntime.transformers.huggingface_models'
-10839 INFO: Analyzing hidden import 'onnxruntime.transformers.import_utils'
-10839 INFO: Analyzing hidden import 'onnxruntime.transformers.io_binding_helper'
-10849 INFO: Analyzing hidden import 'onnxruntime.transformers.large_model_exporter'
-10856 INFO: Analyzing hidden import 'onnxruntime.transformers.metrics'
-10859 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_exporter'
-10871 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model'
-10897 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_bart'
-10901 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_bert'
-10915 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_bert_keras'
-10923 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_bert_tf'
-10932 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_clip'
-10933 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_conformer'
-10935 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_gpt2'
-10937 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_mmdit'
-10998 INFO: Processing pre-safe-import-module hook 'hook-importlib_resources.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
-11027 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_phi'
-11044 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_sam2'
-11047 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_t5'
-11059 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_tnlr'
-11062 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_unet'
-11069 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_vae'
-11070 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_utils'
-11071 INFO: Analyzing hidden import 'onnxruntime.transformers.optimizer'
-11082 INFO: Analyzing hidden import 'onnxruntime.transformers.past_helper'
-11083 INFO: Analyzing hidden import 'onnxruntime.transformers.profile_result_processor'
-11088 INFO: Analyzing hidden import 'onnxruntime.transformers.profiler'
-11094 INFO: Analyzing hidden import 'onnxruntime.transformers.quantize_helper'
-11383 INFO: Analyzing hidden import 'onnxruntime.transformers.shape_infer_helper'
-11385 INFO: Analyzing hidden import 'onnxruntime.transformers.shape_optimizer'
-11392 INFO: Analyzing hidden import 'onnxruntime.transformers.torch_onnx_export_helper'
-11393 INFO: Processing module hooks (post-graph stage)...
-11568 INFO: Processing standard module hook 'hook-PIL.SpiderImagePlugin.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-11610 INFO: Processing standard module hook 'hook-_tkinter.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
-11622 INFO: Performing binary vs. data reclassification (1315 entries)
-11728 INFO: Looking for ctypes DLLs
-11771 INFO: Analyzing run-time hooks ...
-11774 INFO: Including run-time hook 'pyi_rth_inspect.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
-11775 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
-11777 INFO: Including run-time hook 'pyi_rth_multiprocessing.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
-11779 INFO: Including run-time hook 'pyi_rth__tkinter.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
-11804 INFO: Creating base_library.zip...
-11816 INFO: Looking for dynamic libraries
-12328 INFO: Extra DLL search directories (AddDllDirectory): ['C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\numpy.libs', 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\cv2\\../../x64/vc17/bin', 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\shapely.libs']
-12328 INFO: Extra DLL search directories (PATH): ['C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\cv2\\../../x64/vc17/bin']
-12914 INFO: Warnings written to C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\build\BDO_Sailing_Assistant\warn-BDO_Sailing_Assistant.txt
-12965 INFO: Graph cross-reference written to C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\build\BDO_Sailing_Assistant\xref-BDO_Sailing_Assistant.html
-13011 INFO: checking PYZ
-13011 INFO: Building PYZ because PYZ-00.toc is non existent
-13011 INFO: Building PYZ (ZlibArchive) C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\build\BDO_Sailing_Assistant\PYZ-00.pyz
-13476 INFO: Building PYZ (ZlibArchive) C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\build\BDO_Sailing_Assistant\PYZ-00.pyz completed successfully.
-13490 INFO: checking PKG
-13490 INFO: Building PKG because PKG-00.toc is non existent
-13490 INFO: Building PKG (CArchive) 堵‵も.pkg
-13750 INFO: Building PKG (CArchive) 堵‵も.pkg completed successfully.
-13751 INFO: Bootloader C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\.build-venv\Lib\site-packages\PyInstaller\bootloader\Windows-64bit-intel\runw.exe
-13751 INFO: checking EXE
-13752 INFO: Building EXE because EXE-00.toc is non existent
-13752 INFO: Building EXE from EXE-00.toc
-13752 INFO: Copying bootloader EXE to C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\build\BDO_Sailing_Assistant\堵‵も.exe
-13756 INFO: Copying icon to EXE
-13760 INFO: Copying 0 resources to EXE
-13760 INFO: Embedding manifest in EXE
-13764 INFO: Appending PKG archive to EXE
-13769 INFO: Fixing EXE headers
-13836 INFO: Building EXE from EXE-00.toc completed successfully.
-13844 INFO: checking COLLECT
-13844 INFO: Building COLLECT because COLLECT-00.toc is non existent
-13844 INFO: Removing dir C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\dist\BDO_Sailing_Assistant_V6.1
-14167 INFO: Building COLLECT COLLECT-00.toc
-15550 INFO: Building COLLECT COLLECT-00.toc completed successfully.
-15568 INFO: Build complete! The results are available in: C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\dist
+3061 INFO: Appending 'binaries' from .spec
+3061 INFO: Appending 'datas' from .spec
+3090 INFO: checking Analysis
+3090 INFO: Building Analysis because Analysis-00.toc is non existent
+3090 INFO: Looking for Python shared library...
+3090 INFO: Using Python shared library: C:\Users\User\AppData\Local\Programs\Python\Python311\python311.dll
+3090 INFO: Running Analysis Analysis-00.toc
+3090 INFO: Target bytecode optimization level: 0
+3090 INFO: Initializing module dependency graph...
+3093 INFO: Initializing module graph hook caches...
+3115 INFO: Analyzing modules for base_library.zip ...
+3861 INFO: Processing standard module hook 'hook-heapq.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+3929 INFO: Processing standard module hook 'hook-encodings.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+5061 INFO: Processing standard module hook 'hook-math.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+5190 INFO: Processing standard module hook 'hook-pickle.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+6268 INFO: Caching module dependency graph...
+6295 INFO: Analyzing C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\app.py
+6827 INFO: Processing standard module hook 'hook-difflib.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+6851 INFO: Processing standard module hook 'hook-platform.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+6854 INFO: Processing pre-find-module-path hook 'hook-tkinter.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path'
+6858 INFO: TclTkInfo: initializing cached Tcl/Tk info...
+7607 INFO: Processing standard module hook 'hook-_tkinter.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+7734 INFO: Processing standard module hook 'hook-cv2.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+8072 INFO: Processing standard module hook 'hook-numpy.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+8417 INFO: Processing pre-safe-import-module hook 'hook-typing_extensions.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+8421 INFO: SetuptoolsInfo: initializing cached setuptools info...
+9416 INFO: Processing standard module hook 'hook-multiprocessing.util.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+9527 INFO: Processing standard module hook 'hook-xml.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+9812 INFO: Processing standard module hook 'hook-_ctypes.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+10427 INFO: Processing standard module hook 'hook-sysconfig.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+10879 INFO: Processing standard module hook 'hook-webbrowser.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+12413 INFO: Processing standard module hook 'hook-onnxruntime.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+12509 INFO: Processing pre-safe-import-module hook 'hook-tensorflow.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\pre_safe_import_module'
+12522 INFO: Processing standard module hook 'hook-PIL.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+12584 INFO: Processing standard module hook 'hook-PIL.Image.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+12989 INFO: Processing standard module hook 'hook-xml.etree.cElementTree.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+13106 INFO: Processing standard module hook 'hook-PIL.ImageFilter.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+13442 INFO: Processing standard module hook 'hook-shapely.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\stdhooks'
+13682 INFO: Analyzing hidden import 'onnxruntime.capi.convert_npz_to_onnx_adapter'
+13685 INFO: Analyzing hidden import 'onnxruntime.datasets'
+13688 INFO: Analyzing hidden import 'onnxruntime.tools'
+13696 INFO: Analyzing hidden import 'onnxruntime.tools.check_onnx_model_mobile_usability'
+13718 INFO: Analyzing hidden import 'onnxruntime.tools.convert_onnx_models_to_ort'
+13757 INFO: Analyzing hidden import 'onnxruntime.tools.make_dynamic_shape_fixed'
+13761 INFO: Analyzing hidden import 'onnxruntime.tools.offline_tuning'
+13766 INFO: Analyzing hidden import 'onnxruntime.tools.onnx_randomizer'
+13771 INFO: Analyzing hidden import 'onnxruntime.tools.onnxruntime_test'
+13785 INFO: Analyzing hidden import 'onnxruntime.tools.optimize_onnx_model'
+13791 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py'
+13791 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs'
+13795 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.ArgType'
+13797 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.ArgTypeAndIndex'
+13837 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Attribute'
+13848 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.AttributeType'
+13850 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Checkpoint'
+13855 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DeprecatedKernelCreateInfos'
+13858 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DeprecatedNodeIndexAndKernelDefHash'
+13861 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DeprecatedSessionState'
+13865 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DeprecatedSubGraphSessionState'
+13867 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Dimension'
+13870 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DimensionValue'
+13873 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.DimensionValueType'
+13876 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.EdgeEnd'
+13878 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.FloatProperty'
+13881 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Graph'
+13890 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.InferenceSession'
+13894 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.IntProperty'
+13897 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.KernelTypeStrArgsEntry'
+13899 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.KernelTypeStrResolver'
+13903 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.MapType'
+13905 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Model'
+13912 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.ModuleState'
+13916 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Node'
+13925 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.NodeEdge'
+13930 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.NodeType'
+13932 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.NodesToOptimizeIndices'
+13936 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.OpIdKernelTypeStrArgsEntry'
+13940 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.OperatorSetId'
+13945 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.OptimizerGroup'
+13948 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.ParameterOptimizerState'
+13952 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.PropertyBag'
+13957 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.RuntimeOptimizationRecord'
+13961 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.RuntimeOptimizationRecordContainerEntry'
+13964 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.RuntimeOptimizations'
+13966 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.SequenceType'
+13970 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Shape'
+13973 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.SparseTensor'
+13977 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.StringProperty'
+13981 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.StringStringEntry'
+13983 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.Tensor'
+13989 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.TensorDataType'
+13992 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.TensorTypeAndShape'
+13995 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.TypeInfo'
+13998 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.TypeInfoValue'
+14000 INFO: Analyzing hidden import 'onnxruntime.tools.ort_format_model.ort_flatbuffers_py.fbs.ValueInfo'
+14004 INFO: Analyzing hidden import 'onnxruntime.tools.pytorch_export_contrib_ops'
+14007 INFO: Analyzing hidden import 'onnxruntime.tools.qdq_helpers'
+14008 INFO: Analyzing hidden import 'onnxruntime.tools.qdq_helpers.optimize_qdq_model'
+14011 INFO: Analyzing hidden import 'onnxruntime.tools.reduced_build_config_parser'
+14016 INFO: Analyzing hidden import 'onnxruntime.tools.remove_initializer_from_input'
+14017 INFO: Analyzing hidden import 'onnxruntime.tools.symbolic_shape_infer'
+14111 INFO: Processing pre-safe-import-module hook 'hook-packaging.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+14135 INFO: Analyzing hidden import 'onnxruntime.tools.update_onnx_opset'
+14139 INFO: Analyzing hidden import 'onnxruntime.transformers.affinity_helper'
+14145 INFO: Analyzing hidden import 'onnxruntime.transformers.benchmark'
+14160 INFO: Analyzing hidden import 'onnxruntime.transformers.benchmark_helper'
+14177 INFO: Analyzing hidden import 'onnxruntime.transformers.bert_perf_test'
+14196 INFO: Analyzing hidden import 'onnxruntime.transformers.bert_test_data'
+14209 INFO: Analyzing hidden import 'onnxruntime.transformers.compare_bert_results'
+14217 INFO: Analyzing hidden import 'onnxruntime.transformers.constants'
+14221 INFO: Analyzing hidden import 'onnxruntime.transformers.convert_generation'
+14378 INFO: Analyzing hidden import 'onnxruntime.transformers.convert_tf_models_to_pytorch'
+14387 INFO: Analyzing hidden import 'onnxruntime.transformers.convert_to_packing_mode'
+14400 INFO: Analyzing hidden import 'onnxruntime.transformers.dynamo_onnx_helper'
+14408 INFO: Analyzing hidden import 'onnxruntime.transformers.float16'
+14420 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_attention'
+14448 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_attention_clip'
+14457 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_attention_sam2'
+14468 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_attention_unet'
+14495 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_attention_vae'
+14505 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_bart_attention'
+14517 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_base'
+14524 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_bias_add'
+14529 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_biasgelu'
+14533 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_biassplitgelu'
+14539 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_conformer_attention'
+14548 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_constant_fold'
+14554 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_embedlayer'
+14569 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_fastgelu'
+14582 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gelu'
+14591 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gelu_approximation'
+14596 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gemmfastgelu'
+14601 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gpt_attention'
+14613 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gpt_attention_megatron'
+14622 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_gpt_attention_no_past'
+14630 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_group_norm'
+14638 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_layernorm'
+14651 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_mha_dit'
+14662 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_mha_mmdit'
+14676 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_nhwc_conv'
+14682 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_options'
+14690 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_qordered_attention'
+14701 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_qordered_gelu'
+14707 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_qordered_layernorm'
+14711 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_qordered_matmul'
+14718 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_quickgelu'
+14722 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_reshape'
+14730 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_rotary_attention'
+14772 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_shape'
+14780 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_simplified_layernorm'
+14784 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_skip_group_norm'
+14793 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_skiplayernorm'
+14802 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_transpose'
+14808 INFO: Analyzing hidden import 'onnxruntime.transformers.fusion_utils'
+14817 INFO: Analyzing hidden import 'onnxruntime.transformers.huggingface_models'
+14821 INFO: Analyzing hidden import 'onnxruntime.transformers.import_utils'
+14825 INFO: Analyzing hidden import 'onnxruntime.transformers.io_binding_helper'
+14837 INFO: Analyzing hidden import 'onnxruntime.transformers.large_model_exporter'
+14850 INFO: Analyzing hidden import 'onnxruntime.transformers.metrics'
+14858 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_exporter'
+14874 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model'
+14910 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_bart'
+14918 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_bert'
+14938 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_bert_keras'
+14952 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_bert_tf'
+14966 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_clip'
+14970 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_conformer'
+14976 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_gpt2'
+14982 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_mmdit'
+15075 INFO: Processing pre-safe-import-module hook 'hook-importlib_resources.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks\\pre_safe_import_module'
+15120 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_phi'
+15146 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_sam2'
+15153 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_t5'
+15171 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_tnlr'
+15179 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_unet'
+15191 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_model_vae'
+15197 INFO: Analyzing hidden import 'onnxruntime.transformers.onnx_utils'
+15202 INFO: Analyzing hidden import 'onnxruntime.transformers.optimizer'
+15221 INFO: Analyzing hidden import 'onnxruntime.transformers.past_helper'
+15228 INFO: Analyzing hidden import 'onnxruntime.transformers.profile_result_processor'
+15238 INFO: Analyzing hidden import 'onnxruntime.transformers.profiler'
+15247 INFO: Analyzing hidden import 'onnxruntime.transformers.quantize_helper'
+15699 INFO: Analyzing hidden import 'onnxruntime.transformers.shape_infer_helper'
+15706 INFO: Analyzing hidden import 'onnxruntime.transformers.shape_optimizer'
+15717 INFO: Analyzing hidden import 'onnxruntime.transformers.torch_onnx_export_helper'
+15720 INFO: Processing module hooks (post-graph stage)...
+15987 INFO: Processing standard module hook 'hook-PIL.SpiderImagePlugin.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+16065 INFO: Processing standard module hook 'hook-_tkinter.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks'
+16079 INFO: Performing binary vs. data reclassification (1315 entries)
+18265 INFO: Looking for ctypes DLLs
+18310 INFO: Analyzing run-time hooks ...
+18314 INFO: Including run-time hook 'pyi_rth_inspect.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+18319 INFO: Including run-time hook 'pyi_rth_pkgutil.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+18324 INFO: Including run-time hook 'pyi_rth_multiprocessing.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+18329 INFO: Including run-time hook 'pyi_rth__tkinter.py' from 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+18364 INFO: Creating base_library.zip...
+18377 INFO: Looking for dynamic libraries
+19218 INFO: Extra DLL search directories (AddDllDirectory): ['C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\numpy.libs', 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\cv2\\../../x64/vc17/bin', 'C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\shapely.libs']
+19218 INFO: Extra DLL search directories (PATH): ['C:\\Users\\User\\Desktop\\AIэ代Α\\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\\.build-venv\\Lib\\site-packages\\cv2\\../../x64/vc17/bin']
+20017 INFO: Warnings written to C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\build\BDO_Sailing_Assistant\warn-BDO_Sailing_Assistant.txt
+20070 INFO: Graph cross-reference written to C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\build\BDO_Sailing_Assistant\xref-BDO_Sailing_Assistant.html
+20136 INFO: checking PYZ
+20136 INFO: Building PYZ because PYZ-00.toc is non existent
+20136 INFO: Building PYZ (ZlibArchive) C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\build\BDO_Sailing_Assistant\PYZ-00.pyz
+20606 INFO: Building PYZ (ZlibArchive) C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\build\BDO_Sailing_Assistant\PYZ-00.pyz completed successfully.
+20621 INFO: checking PKG
+20621 INFO: Building PKG because PKG-00.toc is non existent
+20621 INFO: Building PKG (CArchive) 堵‵も.pkg
+20869 INFO: Building PKG (CArchive) 堵‵も.pkg completed successfully.
+20871 INFO: Bootloader C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\.build-venv\Lib\site-packages\PyInstaller\bootloader\Windows-64bit-intel\runw.exe
+20871 INFO: checking EXE
+20871 INFO: Building EXE because EXE-00.toc is non existent
+20871 INFO: Building EXE from EXE-00.toc
+20871 INFO: Copying bootloader EXE to C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\build\BDO_Sailing_Assistant\堵‵も.exe
+20875 INFO: Copying icon to EXE
+20878 INFO: Copying 0 resources to EXE
+20878 INFO: Embedding manifest in EXE
+20882 INFO: Appending PKG archive to EXE
+20885 INFO: Fixing EXE headers
+20938 INFO: Building EXE from EXE-00.toc completed successfully.
+20945 INFO: checking COLLECT
+20945 INFO: Building COLLECT because COLLECT-00.toc is non existent
+20945 INFO: Removing dir C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\dist\BDO_Sailing_Assistant_V6.1
+22167 INFO: Building COLLECT COLLECT-00.toc
+24618 INFO: Building COLLECT COLLECT-00.toc completed successfully.
+24641 INFO: Build complete! The results are available in: C:\Users\User\Desktop\AIэ代Α\BDO_Sailing_Assistant_V5.93.6_PLAYER_SOURCE\dist
