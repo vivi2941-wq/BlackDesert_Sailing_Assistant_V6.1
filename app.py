@@ -6832,6 +6832,8 @@ class App(tk.Tk):
         apply_evidence_identity_corrections(rows)
         apply_learned_core_confirmations(rows)
         apply_visual_quantity_learning(rows)
+        # 執行基於核心身份的去重，處理 A/B 版截圖的重複項
+        rows[:]=deduplicate_by_core_identity(rows)
         apply_ratio_confirmations(rows)
         apply_confirmed_material_input_quantity(rows)
         recover_structured_special_quantity_source(rows)
