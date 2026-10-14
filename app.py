@@ -854,6 +854,29 @@ def save_current_batch_rows(rows):
     except Exception:
         return False
 
+def deduplicate_by_core_identity(rows):
+    """基於核心身份（point_id, input_item_id, output_item_id）去重，用於處理 A/B 版截圖的重複項。
+    保留第一筆，後續重複的行將證據合併到第一筆。
+    """
+    if not isinstance(rows,list):return rows
+    kept=[];seen={}
+    for r in rows:
+        if not isinstance(r,dict):kept.append(r);continue
+        core_key=tuple(str(r.get(k) or "") for k in ("point_id","input_item_id","output_item_id"))
+        if not all(core_key):
+            kept.append(r);continue
+        if core_key in seen:
+            first=seen[core_key]
+            first.setdefault("overlap_duplicate_evidence",[]).append({"source_file":r.get("source_file"),"row_index":r.get("row_index")})
+            # 合併數值信息：如果後續行的數值更完整，則更新
+            for field in ("input_quantity","output_quantity","remaining_times","exchange_ratio","exchange_ratio_input","exchange_ratio_output"):
+                if not first.get(field) and r.get(field):
+                    first[field]=r[field]
+        else:
+            seen[core_key]=r
+            kept.append(r)
+    return kept
+
 def sync_planned_route_identity_after_edit(state_data,before,after):
     """人工改正 OCR 身份時只更新同一證物的未完成站，不重排路線、不碰已入帳站。"""
     if not isinstance(state_data,dict) or not isinstance(before,dict) or not isinstance(after,dict):return {"updated":0,"completed_skipped":0}
@@ -7211,6 +7234,8 @@ class App(tk.Tk):
                         if not result.get("ok"):
                             messagebox.showerror("無法確認",result.get("error") or "確認失敗",parent=parent);return
                         apply_confirmed_raw_identity_learning(rows);apply_confirmed_blank_context_learning(rows);reconcile_row_identities_independently(rows)
+                        # 確認身份後執行基於核心身份的去重，處理 A/B 版截圖的重複項
+                        rows[:]=deduplicate_by_core_identity(rows)
                         save_current_batch_rows(rows)
                         self._toast(f"✓ {result['name']} 已記住；下次自動辨認",1600)
                         self.show_ocr_review(rows,reuse_win=parent)
@@ -7330,6 +7355,8 @@ class App(tk.Tk):
                         if rr.get("point_id") and rr.get("input_item_id") and rr.get("output_item_id"):
                             rr["issues"]=_issues_after_core_confirmation(rr)
                             if not rr["issues"]:rr["status"]="候選可用"
+                        # 手動修改後執行基於核心身份的去重，處理 A/B 版截圖的重複項
+                        rows[:]=deduplicate_by_core_identity(rows)
                         save_current_batch_rows(rows)
                         route_sync=sync_planned_route_identity_after_edit(self.state_data,before,rr)
                         if route_sync.get("updated") or route_sync.get("completed_skipped"):STORE.save(self.state_data)
