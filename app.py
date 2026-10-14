@@ -936,7 +936,8 @@ def reconcile_row_identities_independently(rows):
             if not raw:continue
             learned_source=str((r.get("identity_source") or {}).get(side) or "")
             if (learned_source.startswith("圖片學習") or learned_source.startswith("已確認OCR錯字")
-                    or learned_source.startswith("已確認名稱的一字誤讀") or learned_source.startswith("本張圖片人工確認")):
+                    or learned_source.startswith("已確認名稱的一字誤讀") or learned_source.startswith("本張圖片人工確認")
+                    or learned_source=="玩家人工確認"):
                 continue
             hit=MASTER.resolve_item(raw);rec=None
             if hit.get("matched") and hit.get("record"):
@@ -7317,6 +7318,11 @@ class App(tk.Tk):
                             if (str(before.get(idkey) or "")!=str(rr.get(idkey) or "") or
                                     str(before.get(namekey) or "")!=str(rr.get(namekey) or "")):
                                 if save_evidence_identity_correction(rr,side):corrected_sides.append(side)
+                                rr.setdefault("identity_source",{})[side]="玩家人工確認"
+                                # 清理身份相關的問題
+                                rr["issues"]=[q for q in rr.get("issues",[]) if
+                                             f"{side.upper()}新身份待確認" not in str(q)
+                                             and f"{side.upper()}品項未匹配ITEM_ID" not in str(q)]
                         visual_learned=[]
                         for side in ("input","output"):
                             if side in corrected_sides and learn_visual_item(rr,side):visual_learned.append(side)
