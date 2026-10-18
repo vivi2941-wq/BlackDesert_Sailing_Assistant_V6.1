@@ -7334,6 +7334,12 @@ class App(tk.Tk):
                                         if ok:
                                             rr[keyname]=val
                                             messagebox.showinfo("添加別名成功",f"✓ 已添加別名：「{val}」→ ID {current_id}（{current_name}）",parent=ew)
+                                            # 重新顯示頁面以刷新資料
+                                            try:ew.grab_release()
+                                            except:pass
+                                            ew.destroy()
+                                            self.show_ocr_review(rows,reuse_win=parent)
+                                            return
                                         else:
                                             messagebox.showerror("添加別名失敗",msg,parent=ew)
                                             return
