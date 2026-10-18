@@ -7317,6 +7317,30 @@ class App(tk.Tk):
                                     rr[f"{side}_stage"]=str(st) if st not in (None,"") else ""
                                     rr[f"{side}_kind"]="段位品" if st not in (None,"") else (rr.get(f"{side}_kind") or "一般材料")
                             elif side!="point":
+                                # 新增：如果當前已有ID，詢問是否添加別名
+                                current_id=rr.get(idkey)
+                                current_name=rr.get(keyname,"")
+                                if current_id:
+                                    # 當前已有ID，但輸入的名稱在主資料庫找不到
+                                    msg=f"主資料庫找不到「{val}」。\n\n"
+                                    msg+=f"但這筆資料已有 ID：{current_id}\n"
+                                    msg+=f"當前品名：{current_name}\n\n"
+                                    msg+=f"是否將「{val}」添加為別名，關聯到 ID {current_id}？\n\n"
+                                    msg+=f"這樣以後 OCR 識別「{val}」時會自動對應到這個 ID。\n\n"
+                                    msg+=f"選擇「否」將直接取消修改。"
+                                    if messagebox.askyesno("添加別名",msg,parent=ew):
+                                        # 添加別名
+                                        ok,msg=MASTER.add_user_alias("品項",val,current_id)
+                                        if ok:
+                                            rr[keyname]=val
+                                            messagebox.showinfo("添加別名成功",f"✓ 已添加別名：「{val}」→ ID {current_id}（{current_name}）",parent=ew)
+                                        else:
+                                            messagebox.showerror("添加別名失敗",msg,parent=ew)
+                                            return
+                                    else:
+                                        # 用戶選擇不添加別名，直接取消修改
+                                        return
+                                # 沒有當前ID，繼續原有邏輯
                                 old=_find_registry_item(val)
                                 if old:
                                     rec,_=_confirm_new_item_identity(val,rr.get(f"{side}_kind",""),

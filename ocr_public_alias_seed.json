@@ -358,5 +358,11 @@
     "alias": "塔利波咒术缸子",
     "id": "ITEM_7_012",
     "source": "公共OCR字典"
+  },
+  {
+    "object_type": "品項",
+    "alias": "海賊團的補給箱",
+    "id": "ITEM_3_008",
+    "source": "官方新名"
   }
 ]
