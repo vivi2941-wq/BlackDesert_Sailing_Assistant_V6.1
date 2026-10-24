@@ -26,4 +26,4 @@ a = Analysis(
 pyz = PYZ(a.pure)
 exe = EXE(pyz,a.scripts,[],exclude_binaries=True,name='黑沙航海助手',debug=False,bootloader_ignore_signals=False,
           strip=False,upx=True,console=False,icon='assets/sailing_assistant.ico')
-coll = COLLECT(exe,a.binaries,a.datas,strip=False,upx=True,upx_exclude=[],name='BDO_Sailing_Assistant_V6.1.3')
+coll = COLLECT(exe,a.binaries,a.datas,strip=False,upx=True,upx_exclude=[],name='BDO_Sailing_Assistant_V6.1.4')

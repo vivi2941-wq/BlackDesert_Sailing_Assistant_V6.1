@@ -3,7 +3,7 @@ import os
 import unicodedata
 
 class MasterData:
-    def __init__(self,path,user_alias_path=None,public_alias_path=None,observed_item_path=None):
+    def __init__(self,path,user_alias_path=None,public_alias_path=None):
         with open(path,"r",encoding="utf-8") as f:
             data=json.load(f)
         self.items=data["items"]
@@ -40,26 +40,6 @@ class MasterData:
         self.alias_map={}
         for a in self.aliases:
             self.alias_map[(a["object_type"],self._n(a["alias"]))]=a["id"]
-
-        # 加載玩家已經建立過的物品ID（observed_item_registry.json）
-        self.observed_items={}
-        if observed_item_path and os.path.exists(observed_item_path):
-            try:
-                with open(observed_item_path,"r",encoding="utf-8") as f:
-                    observed_data=json.load(f)
-                if isinstance(observed_data,dict) and "items" in observed_data:
-                    for item in observed_data["items"]:
-                        if isinstance(item,dict) and "item_id" in item and "names" in item:
-                            item_id=item["item_id"]
-                            # 將ID添加到item_by_id（如果不存在）
-                            if item_id not in self.item_by_id:
-                                self.item_by_id[item_id]=item
-                            # 將所有名稱添加到item_name
-                            for name in item["names"]:
-                                if name:
-                                    self.item_name[self._n(name)]=item_id
-            except Exception:
-                pass
 
     def _n(self,s):
         # OCR 中文模型常把繁體字輸出成簡體。只在「比對鍵」統一字形；

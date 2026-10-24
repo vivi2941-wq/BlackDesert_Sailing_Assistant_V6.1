@@ -353,7 +353,7 @@ def is_normal_stage_exchange(row):
             str(row.get("output_kind") or "")=="段位品" and
             a in range(1,8) and b in range(1,8))
 MASTER=MasterData(os.path.join(BASE,"data","master_data.json"), shared_file("ocr_aliases.json", fallback_local=False),
-                  os.path.join(BASE,"ocr_public_alias_seed.json"), shared_file("observed_item_registry.json", fallback_local=False))
+                  os.path.join(BASE,"ocr_public_alias_seed.json"))
 KNOWLEDGE_PACK_DIR=os.path.join(SHARED,"辨識知識包")
 
 def build_ocr_knowledge_pack(master=None):
@@ -1858,7 +1858,7 @@ def build_identity_suspect_report(rows=None):
             if "曾受舊整列記憶影響" in str(issue):
                 suspects.append({"type":"舊整列記憶無法安全自動還原","row":idx,"side":"待確認","raw":str(issue),
                                  "current_id":"","text_resolves_to":"","source_file":r.get("source_file"),"row_index":r.get("row_index")})
-    report={"version":"V6.1.3","generated_at":datetime.datetime.now().isoformat(timespec="seconds"),
+    report={"version":"V6.1.4","generated_at":datetime.datetime.now().isoformat(timespec="seconds"),
             "policy":"只報告，不自動改ID；請依原始切片確認。","count":len(suspects),"suspects":suspects}
     try:
         with open(IDENTITY_SUSPECT_PATH,"w",encoding="utf-8") as f:json.dump(report,f,ensure_ascii=False,indent=2)
@@ -3708,14 +3708,14 @@ def make_round_panel(parent,bg="#fffef9",outline=CUTE_BORDER,radius=22,padding=1
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("黑沙航海助手 V6.1.3")
+        self.title("黑沙航海助手 V6.1.4")
         try:
             if os.path.exists(APP_ICON_PATH):self.iconbitmap(APP_ICON_PATH)
         except Exception:pass
         self.minsize(930,680)
         smart_window(self,"main","1080x780",980,700)
         self.state_data=STORE.load()
-        try:ensure_version_backup("V6.1.3")
+        try:ensure_version_backup("V6.1.4")
         except Exception:pass
         migrate_confirmed_duplicate_ids_v584()
         archive_legacy_context_rules_v585()
@@ -3938,7 +3938,7 @@ class App(tk.Tk):
                   relief="flat",command=self.open_advanced_tools,padx=16,pady=8).pack(side="right")
         tk.Button(tools,text="🌱 新手起航指南",font=(FONT,12,"bold"),bg=CUTE_GREEN_SOFT,fg=CUTE_GREEN,
                   relief="flat",command=self.open_onboarding,padx=14,pady=8).pack(side="right",padx=6)
-        tk.Label(page,text=f"資料庫：V5.85.7完整成熟後台｜118段位品｜91點位｜{len(MASTER.aliases)}筆名稱別名　　版本 V6.1.3",
+        tk.Label(page,text=f"資料庫：V5.85.7完整成熟後台｜118段位品｜91點位｜{len(MASTER.aliases)}筆名稱別名　　版本 V6.1.4",
                  font=(FONT,10),bg=CUTE_BG,fg="#8a948e").pack(pady=(0,18))
 
     def open_onboarding(self,auto=False):
@@ -4185,7 +4185,7 @@ class App(tk.Tk):
             messagebox.showinfo("還原完成",f"✓ 已還原 {r['count']} 個檔案。\n請關閉並重新開啟助手。\n\n還原前的安全備份：\n{r['safety_backup']}",parent=win)
             refresh_health()
         def do_bundle():
-            try:r=create_support_bundle("V6.1.3")
+            try:r=create_support_bundle("V6.1.4")
             except Exception as ex:messagebox.showerror("產生失敗",str(ex),parent=win);return
             messagebox.showinfo("AI自助求救包",f"✓ 已整理 {r['included']} 個必要資料檔。\n不含任何圖片。\n\n把ZIP上傳到玩家自己的ChatGPT，再照包內提問文字描述問題：\n{r['path']}",parent=win)
             try:
