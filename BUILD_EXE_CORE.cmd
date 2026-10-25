@@ -11,7 +11,7 @@ set "BUILD_RESULT=%ERRORLEVEL%"
 type "%BUILD_LOG%"
 echo.
 if "%BUILD_RESULT%"=="0" (
-    echo BUILD SUCCEEDED: dist\BDO_Sailing_Assistant_V6.1.4
+    echo BUILD SUCCEEDED: dist\BDO_Sailing_Assistant_V6.1.7
 ) else (
     echo BUILD FAILED. Please send build_exe.log back for diagnosis.
 )
