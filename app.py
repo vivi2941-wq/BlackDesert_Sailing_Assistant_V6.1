@@ -7302,28 +7302,28 @@ class App(tk.Tk):
                              font=(FONT,11,"bold"),bg=CUTE_YELLOW_SOFT,fg="#78622f",padx=12,pady=7).pack(fill="x",padx=22,pady=8)
                     def save_edit():
                         before=dict(rr)
-                        messagebox.showinfo("調試信息1",f"開始保存編輯",parent=ew)
                         mapping=[("point_name",MASTER.resolve_point,"point_id","point"),
                                  ("input_name",MASTER.resolve_item,"input_item_id","input"),
                                  ("output_name",MASTER.resolve_item,"output_item_id","output")]
                         unresolved_points=[]
                         for keyname,resolver,idkey,side in mapping:
                             val=vars_[keyname].get().strip()
-                            messagebox.showinfo("調試信息2",f"處理欄位: {keyname}, 值: {val}, side: {side}",parent=ew)
                             if not val: continue
                             x=resolver(val)
-                            messagebox.showinfo("調試信息3",f"resolver結果: {x}",parent=ew)
                             if x.get("matched"):
-                                rr[idkey]=x["record"]["id"]; rr[keyname]=x["record"]["name"]
-                                if side!="point":
-                                    st=x["record"].get("stage")
-                                    rr[f"{side}_stage"]=str(st) if st not in (None,"") else ""
-                                    rr[f"{side}_kind"]="段位品" if st not in (None,"") else (rr.get(f"{side}_kind") or "一般材料")
+                                # 安全檢查：如果record為None，則使用id字段
+                                if x.get("record") is None:
+                                    rr[idkey]=x.get("id"); rr[keyname]=val
+                                else:
+                                    rr[idkey]=x["record"]["id"]; rr[keyname]=x["record"]["name"]
+                                    if side!="point":
+                                        st=x["record"].get("stage")
+                                        rr[f"{side}_stage"]=str(st) if st not in (None,"") else ""
+                                        rr[f"{side}_kind"]="段位品" if st not in (None,"") else (rr.get(f"{side}_kind") or "一般材料")
                             elif side!="point":
                                 # 新增：如果當前已有ID，詢問是否添加別名
                                 current_id=rr.get(idkey)
                                 current_name=rr.get(keyname,"")
-                                messagebox.showinfo("調試信息4",f"未匹配, current_id: {current_id}, current_name: {current_name}",parent=ew)
                                 if current_id:
                                     # 當前已有ID，但輸入的名稱在主資料庫找不到
                                     msg=f"主資料庫找不到「{val}」。\n\n"
@@ -7352,8 +7352,6 @@ class App(tk.Tk):
                                         return
                                 # 沒有當前ID，檢查observed_item_registry.json
                                 old=_find_registry_item(val)
-                                # 調試：顯示查找結果
-                                messagebox.showinfo("調試信息",f"查找名稱: {val}\n找到: {old}",parent=ew)
                                 if old:
                                     # 找到已存在的物品，顯示給用戶確認
                                     found_id=old.get("item_id")
