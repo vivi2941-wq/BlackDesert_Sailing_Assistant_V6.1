@@ -7302,14 +7302,17 @@ class App(tk.Tk):
                              font=(FONT,11,"bold"),bg=CUTE_YELLOW_SOFT,fg="#78622f",padx=12,pady=7).pack(fill="x",padx=22,pady=8)
                     def save_edit():
                         before=dict(rr)
+                        messagebox.showinfo("調試信息1",f"開始保存編輯",parent=ew)
                         mapping=[("point_name",MASTER.resolve_point,"point_id","point"),
                                  ("input_name",MASTER.resolve_item,"input_item_id","input"),
                                  ("output_name",MASTER.resolve_item,"output_item_id","output")]
                         unresolved_points=[]
                         for keyname,resolver,idkey,side in mapping:
                             val=vars_[keyname].get().strip()
+                            messagebox.showinfo("調試信息2",f"處理欄位: {keyname}, 值: {val}, side: {side}",parent=ew)
                             if not val: continue
                             x=resolver(val)
+                            messagebox.showinfo("調試信息3",f"resolver結果: {x}",parent=ew)
                             if x.get("matched"):
                                 rr[idkey]=x["record"]["id"]; rr[keyname]=x["record"]["name"]
                                 if side!="point":
@@ -7320,6 +7323,7 @@ class App(tk.Tk):
                                 # 新增：如果當前已有ID，詢問是否添加別名
                                 current_id=rr.get(idkey)
                                 current_name=rr.get(keyname,"")
+                                messagebox.showinfo("調試信息4",f"未匹配, current_id: {current_id}, current_name: {current_name}",parent=ew)
                                 if current_id:
                                     # 當前已有ID，但輸入的名稱在主資料庫找不到
                                     msg=f"主資料庫找不到「{val}」。\n\n"
