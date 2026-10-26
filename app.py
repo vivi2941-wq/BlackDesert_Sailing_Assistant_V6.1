@@ -438,7 +438,7 @@ def _find_registry_item(name):
     nk=_norm_identity_name(name)
     if not nk:return None
     for rec in _load_item_registry().get("items",[]):
-        if isinstance(rec,dict) and any(_norm_identity_name(n)==nk for n in rec.get("names",[]) or []):
+        if isinstance(rec,dict) and any(_norm_identity_name(n)==nk for n in rec.get("names",[])):
             return rec
     return None
 
@@ -460,7 +460,7 @@ def _confirm_new_item_identity(name,kind="",stage="",source_file="",side="",pref
              "stage":str(stage or ""),"first_seen_source":str(source_file or ""),
              "first_seen_side":str(side or ""),"evidence_count":1}
         items.append(rec);created=True
-    elif not any(_norm_identity_name(n)==nk for n in rec.get("names",[]) or []):
+    elif not any(_norm_identity_name(n)==nk for n in rec.get("names",[])):
         rec.setdefault("names",[]).append(name)
     rec["identity_status"]="玩家已確認"
     rec["confirmed_name"]=name
