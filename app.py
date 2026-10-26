@@ -7348,6 +7348,8 @@ class App(tk.Tk):
                                         return
                                 # 沒有當前ID，檢查observed_item_registry.json
                                 old=_find_registry_item(val)
+                                # 調試：顯示查找結果
+                                messagebox.showinfo("調試信息",f"查找名稱: {val}\n找到: {old}",parent=ew)
                                 if old:
                                     # 找到已存在的物品，顯示給用戶確認
                                     found_id=old.get("item_id")
