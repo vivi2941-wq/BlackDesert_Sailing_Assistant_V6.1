@@ -68,11 +68,8 @@ class MasterData:
         if not alias:
             return False,"別名不可空白"
         valid=self.point_by_id if object_type=="點位" else self.item_by_id
-        # 修改：如果ID不在主資料庫中，也允許添加別名（用於特殊交換品）
         if target_id not in valid:
-            # 檢查是否是已知特殊交換品（玩家已經建立過的）
-            # 這裡不嚴格檢查，因為玩家可能已經通過其他方式建立了ID
-            pass
+            return False,"目標ID不存在"
         key=(object_type,self._n(alias))
         existing=self.alias_map.get(key)
         if existing and existing!=target_id:
