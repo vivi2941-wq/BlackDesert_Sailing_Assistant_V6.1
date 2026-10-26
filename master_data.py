@@ -68,8 +68,11 @@ class MasterData:
         if not alias:
             return False,"別名不可空白"
         valid=self.point_by_id if object_type=="點位" else self.item_by_id
+        # 放寬檢查：允許關聯到observed_item_registry.json中的ID（ITEM_PUBLIC_* 或 ITEM_MISC_*）
         if target_id not in valid:
-            return False,"目標ID不存在"
+            # 檢查是否是已知的公共ID或玩家ID
+            if not (target_id.startswith("ITEM_PUBLIC_") or target_id.startswith("ITEM_MISC_")):
+                return False,"目標ID不存在"
         key=(object_type,self._n(alias))
         existing=self.alias_map.get(key)
         if existing and existing!=target_id:
