@@ -7325,31 +7325,37 @@ class App(tk.Tk):
                                 current_id=rr.get(idkey)
                                 current_name=rr.get(keyname,"")
                                 if current_id:
-                                    # 當前已有ID，但輸入的名稱在主資料庫找不到
-                                    msg=f"主資料庫找不到「{val}」。\n\n"
-                                    msg+=f"但這筆資料已有 ID：{current_id}\n"
-                                    msg+=f"當前品名：{current_name}\n\n"
-                                    msg+=f"是否將「{val}」添加為別名，關聯到 ID {current_id}？\n\n"
-                                    msg+=f"這樣以後 OCR 識別「{val}」時會自動對應到這個 ID。\n\n"
-                                    msg+=f"選擇「否」將直接取消修改。"
-                                    if messagebox.askyesno("添加別名",msg,parent=ew):
-                                        # 添加別名
-                                        ok,msg=MASTER.add_user_alias("品項",val,current_id)
-                                        if ok:
-                                            rr[keyname]=val
-                                            messagebox.showinfo("添加別名成功",f"✓ 已添加別名：「{val}」→ ID {current_id}（{current_name}）",parent=ew)
-                                            # 重新顯示頁面以刷新資料
-                                            try:ew.grab_release()
-                                            except:pass
-                                            ew.destroy()
-                                            self.show_ocr_review(rows,reuse_win=parent)
-                                            return
+                                    # 當前已有ID，檢查是否是OCR誤讀
+                                    if current_name != val:
+                                        # 當前品名和輸入名稱不同，說明OCR誤讀
+                                        msg=f"OCR誤讀為「{current_name}」，你修正為「{val}」。\n\n"
+                                        msg+=f"這筆資料已有 ID：{current_id}\n\n"
+                                        msg+=f"是否將誤讀的「{current_name}」添加為別名，關聯到ID {current_id}？\n\n"
+                                        msg+=f"這樣以後 OCR 識別「{current_name}」時會自動對應到「{val}」。\n\n"
+                                        msg+=f"選擇「否」只更新品名，不添加別名。"
+                                        if messagebox.askyesno("添加別名",msg,parent=ew):
+                                            # 添加別名：誤讀的名稱 → 正確ID
+                                            ok,msg=MASTER.add_user_alias("品項",current_name,current_id)
+                                            if ok:
+                                                rr[keyname]=val  # 更新品名為正確名稱
+                                                messagebox.showinfo("添加別名成功",f"✓ 已添加別名：「{current_name}」→ ID {current_id}（{val}）",parent=ew)
+                                                # 重新顯示頁面以刷新資料
+                                                try:ew.grab_release()
+                                                except:pass
+                                                ew.destroy()
+                                                self.show_ocr_review(rows,reuse_win=parent)
+                                                return
+                                            else:
+                                                messagebox.showerror("添加別名失敗",msg,parent=ew)
+                                                # 即使添加別名失敗，也更新品名
+                                                rr[keyname]=val
+                                                return
                                         else:
-                                            messagebox.showerror("添加別名失敗",msg,parent=ew)
-                                            return
+                                            # 用戶選擇不添加別名，但仍然更新品名
+                                            rr[keyname]=val
                                     else:
-                                        # 用戶選擇不添加別名，直接取消修改
-                                        return
+                                        # 當前品名和輸入名稱相同，不需要添加別名
+                                        rr[keyname]=val
                                 # 沒有當前ID，檢查observed_item_registry.json
                                 old=_find_registry_item(val)
                                 if old:
