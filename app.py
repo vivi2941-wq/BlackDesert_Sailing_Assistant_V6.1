@@ -7339,17 +7339,11 @@ class App(tk.Tk):
                                             if ok:
                                                 rr[keyname]=val  # 更新品名為正確名稱
                                                 messagebox.showinfo("添加別名成功",f"✓ 已添加別名：「{current_name}」→ ID {current_id}（{val}）",parent=ew)
-                                                # 重新顯示頁面以刷新資料
-                                                try:ew.grab_release()
-                                                except:pass
-                                                ew.destroy()
-                                                self.show_ocr_review(rows,reuse_win=parent)
-                                                return
+                                                # 不return，繼續執行後續保存邏輯
                                             else:
                                                 messagebox.showerror("添加別名失敗",msg,parent=ew)
                                                 # 即使添加別名失敗，也更新品名
                                                 rr[keyname]=val
-                                                return
                                         else:
                                             # 用戶選擇不添加別名，但仍然更新品名
                                             rr[keyname]=val
