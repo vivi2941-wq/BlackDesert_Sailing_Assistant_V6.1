@@ -7330,40 +7330,41 @@ class App(tk.Tk):
                                 else:
                                     # 沒有當前ID，檢查observed_item_registry.json
                                     old=_find_registry_item(val)
-                                if old:
-                                    # 找到已存在的物品，顯示給用戶確認
-                                    found_id=old.get("item_id")
-                                    found_name=old.get("confirmed_name") or old.get("names",[""])[0]
-                                    msg=f"主資料庫找不到「{val}」。\n\n"
-                                    msg+=f"但在玩家已建立的物品中找到匹配：\n"
-                                    msg+=f"ID：{found_id}\n"
-                                    msg+=f"品名：{found_name}\n\n"
-                                    msg+=f"是否關聯到這個ID？\n\n"
-                                    msg+=f"選擇「是」將使用ID {found_id}（{found_name}）\n"
-                                    msg+=f"選擇「否」將取消修改"
-                                    if messagebox.askyesno("找到已有物品",msg,parent=ew):
-                                        rr[idkey]=found_id
-                                        rr[keyname]=found_name
-                                        rr[f"{side}_kind"]=str(old.get("kind") or rr.get(f"{side}_kind") or "未分類")
+                                    if old:
+                                        # 找到已存在的物品，顯示給用戶確認
+                                        found_id=old.get("item_id")
+                                        found_name=old.get("confirmed_name") or old.get("names",[""])[0]
+                                        msg=f"主資料庫找不到「{val}」。\n\n"
+                                        msg+=f"但在玩家已建立的物品中找到匹配：\n"
+                                        msg+=f"ID：{found_id}\n"
+                                        msg+=f"品名：{found_name}\n\n"
+                                        msg+=f"是否關聯到這個ID？\n\n"
+                                        msg+=f"選擇「是」將使用ID {found_id}（{found_name}）\n"
+                                        msg+=f"選擇「否」將取消修改"
+                                        if messagebox.askyesno("找到已有物品",msg,parent=ew):
+                                            rr[idkey]=found_id
+                                            rr[keyname]=found_name
+                                            rr[f"{side}_kind"]=str(old.get("kind") or rr.get(f"{side}_kind") or "未分類")
+                                            if rr[f"{side}_kind"]!="段位品":rr[f"{side}_stage"]=""
+                                            messagebox.showinfo("關聯成功",f"✓ 已關聯到 ID {found_id}（{found_name}）",parent=ew)
+                                            try:ew.grab_release()
+                                            except:pass
+                                            ew.destroy()
+                                            self.show_ocr_review(rows,reuse_win=parent)
+                                            return
+                                        else:
+                                            return
+                                    elif messagebox.askyesno("建立新物品身份",
+                                            f"主資料庫找不到「{val}」。\n\n"
+                                            "如果你已經看原圖確認這是正式名稱，按『是』建立新的穩定 ID。\n"
+                                            "如果還不確定，按『否』回去繼續確認。",parent=ew):
+                                        rec,_=_confirm_new_item_identity(val,rr.get(f"{side}_kind",""),
+                                            rr.get(f"{side}_stage",""),rr.get("source_file",""),side)
+                                        rr[idkey]=rec["item_id"];rr[keyname]=val
+                                        rr[f"{side}_kind"]=str(rec.get("kind") or rr.get(f"{side}_kind") or "未分類")
                                         if rr[f"{side}_kind"]!="段位品":rr[f"{side}_stage"]=""
-                                        messagebox.showinfo("關聯成功",f"✓ 已關聯到 ID {found_id}（{found_name}）",parent=ew)
-                                        try:ew.grab_release()
-                                        except:pass
-                                        ew.destroy()
-                                        self.show_ocr_review(rows,reuse_win=parent)
-                                        return
                                     else:
                                         return
-                                elif messagebox.askyesno("建立新物品身份",
-                                        f"主資料庫找不到「{val}」。\n\n"
-                                        "如果你已經看原圖確認這是正式名稱，按『是』建立新的穩定 ID。\n"
-                                        "如果還不確定，按『否』回去繼續確認。",parent=ew):
-                                    rec,_=_confirm_new_item_identity(val,rr.get(f"{side}_kind",""),
-                                        rr.get(f"{side}_stage",""),rr.get("source_file",""),side)
-                                    rr[idkey]=rec["item_id"];rr[keyname]=val
-                                    rr[f"{side}_kind"]=str(rec.get("kind") or rr.get(f"{side}_kind") or "未分類")
-                                    if rr[f"{side}_kind"]!="段位品":rr[f"{side}_stage"]=""
-                                else:return
                             else:
                                 unresolved_points.append(val)
                         if unresolved_points:
