@@ -7328,8 +7328,8 @@ class App(tk.Tk):
                                     # 更新品名為正確名稱
                                     rr[keyname]=val
                                 else:
-                                # 沒有當前ID，檢查observed_item_registry.json
-                                old=_find_registry_item(val)
+                                    # 沒有當前ID，檢查observed_item_registry.json
+                                    old=_find_registry_item(val)
                                 if old:
                                     # 找到已存在的物品，顯示給用戶確認
                                     found_id=old.get("item_id")
