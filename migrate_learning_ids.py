@@ -18,8 +18,7 @@ import shutil
 from datetime import datetime
 
 # 路徑
-# 從環境變量或默認位置獲取玩家數據路徑
-PLAYER_DATA = os.environ.get("BDO_PLAYER_DATA", os.path.join(os.getenv("LOCALAPPDATA"), "BDO_Sailing_Assistant_Player", "data"))
+PLAYER_DATA = r"C:\Users\User\AppData\Local\BDO_Sailing_Assistant_Player\data"
 OBSERVED_REGISTRY = os.path.join(PLAYER_DATA, "observed_item_registry.json")
 IDENTITY_CORRECTIONS = os.path.join(PLAYER_DATA, "ocr_evidence_identity_corrections.json")
 VISUAL_MEMORY = os.path.join(PLAYER_DATA, "ocr_visual_item_memory.json")
