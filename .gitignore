@@ -77,3 +77,6 @@ desktop.ini
 *.log
 *.tmp
 temp_*/
+
+# 維護工具（不需要在公共發布中）
+migrate_learning_ids.py
