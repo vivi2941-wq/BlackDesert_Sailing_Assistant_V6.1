@@ -1328,8 +1328,18 @@ def build_ocr_learning_history(records=None):
             "repeat_item_count":sum(bool(x["repeat_count"]) for x in result)}
 
 def build_confirmed_raw_identity_map():
-    """V5.85.4：只學習「同一OCR原文只有一個已確認答案」的錯字修正。"""
+    """V5.85.4：只學習「同一OCR原文只有一個已確認答案」的錯字修正。
+    V6.1.6：當ID不存在時，根據名稱查找registry中的新ID，支持ID遷移。"""
     registry={str(x.get("item_id") or ""):x for x in _load_item_registry().get("items",[]) if isinstance(x,dict)}
+    # 建立名稱到ID的映射，用於ID遷移
+    name_to_id={}
+    for item in _load_item_registry().get("items",[]):
+        if isinstance(item, dict):
+            item_id=str(item.get("item_id") or "")
+            for nm in item.get("names",[]):
+                norm_nm=_norm_identity_name(nm)
+                if norm_nm:
+                    name_to_id[norm_nm]=item_id
     choices={}
     for rec in load_evidence_identity_corrections():
         if not isinstance(rec,dict):continue
@@ -1339,7 +1349,17 @@ def build_confirmed_raw_identity_map():
         iid=str(rec.get("id") or "");name=str(rec.get("name") or "").strip()
         if not raw_key or not iid or not name:continue
         target=registry.get(iid) or {}
-        if iid not in MASTER.item_by_id and target.get("identity_status") not in ("玩家已確認","公共已確認","成熟庫已確認"):continue
+        # 檢查ID是否存在，如果不存在嘗試根據名稱查找新ID
+        if iid not in MASTER.item_by_id and target.get("identity_status") not in ("玩家已確認","公共已確認","成熟庫已確認"):
+            # ID不存在，嘗試根據名稱查找新ID
+            norm_name=_norm_identity_name(name)
+            if norm_name in name_to_id:
+                iid=name_to_id[norm_name]
+                target=registry.get(iid) or {}
+                # 更新學習記錄中的ID
+                rec["id"]=iid
+            else:
+                continue
         choices.setdefault((side,raw_key),{})[(iid,name)]=rec
     learned={}
     for key,targets in choices.items():
