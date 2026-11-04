@@ -6,7 +6,7 @@
 
 **如果你只是想下載來用，點這裡：**
 
-### [⬇️ 下載 V6.1 玩家版（Windows）](https://github.com/vivi2941-wq/BlackDesert_Sailing_Assistant_V6.1/releases/tag/V6.1)
+### [⬇️ 下載 V6.1.6 玩家版（Windows）](https://github.com/vivi2941-wq/BlackDesert_Sailing_Assistant_V6.1/releases/tag/V6.1.6)
 
 下載後：
 1. 解壓縮 ZIP 檔案
