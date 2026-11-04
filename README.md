@@ -1,4 +1,4 @@
-# ⚓ 黑色沙漠航海助手 V6.1
+# ⚓ 黑色沙漠航海助手 V6.1.6
 
 ### Black Desert Sailing Assistant｜又名：海豹助手 🦭
 
