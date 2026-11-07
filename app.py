@@ -7318,7 +7318,11 @@ class App(tk.Tk):
                     vars_={}
                     for rown,(lab,keyname) in enumerate(specs):
                         tk.Label(body,text=lab,font=(FONT,16,"bold"),bg=CUTE_GREEN_SOFT,fg=CUTE_GREEN).grid(row=rown,column=0,sticky="w",pady=10)
-                        v=tk.StringVar(value=str(rr.get(keyname) or rr.get(keyname.replace("_name","_raw")) or ""))
+                        # V6.1.7：預填充時自動清理OCR前綴（如[6段]、[7踏段]），避免用戶輸入包含前綴的名稱
+                        raw_val=str(rr.get(keyname) or rr.get(keyname.replace("_name","_raw")) or "")
+                        import re
+                        clean_val=re.sub(r'^\[\d+[踏階]段\]', '', raw_val).strip()
+                        v=tk.StringVar(value=clean_val if clean_val else raw_val)
                         vars_[keyname]=v
                         tk.Entry(body,textvariable=v,font=(FONT,19),width=36,relief="flat",highlightthickness=1,
                                  highlightbackground=CUTE_BORDER,highlightcolor=CUTE_GREEN).grid(row=rown,column=1,padx=12,pady=10,sticky="ew")
