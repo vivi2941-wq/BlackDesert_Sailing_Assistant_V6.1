@@ -1329,7 +1329,8 @@ def build_ocr_learning_history(records=None):
 
 def build_confirmed_raw_identity_map():
     """V5.85.4：只學習「同一OCR原文只有一個已確認答案」的錯字修正。
-    V6.1.6：當ID不存在時，根據名稱查找registry中的新ID，支持ID遷移。"""
+    V6.1.6：當ID不存在時，根據名稱查找registry中的新ID，支持ID遷移。
+    V6.1.7：放寬學習應用條件，允許已確認ID被學習記錄覆蓋（只有段位品ID不覆蓋）。"""
     registry={str(x.get("item_id") or ""):x for x in _load_item_registry().get("items",[]) if isinstance(x,dict)}
     # 建立名稱到ID的映射，用於ID遷移
     name_to_id={}
@@ -1381,9 +1382,13 @@ def apply_confirmed_raw_identity_learning(rows):
             rec=learned.get((side,raw_key))
             if not rec:continue
             current_id=str(row.get(f"{side}_item_id") or "")
+            # V6.1.7：放寬學習應用條件，允許已確認ID被學習記錄覆蓋
+            # 只有當ID在MASTER.item_by_id中且是段位品時，才不覆蓋
             if current_id and current_id!=rec["id"]:
                 current=registry.get(current_id) or {}
-                if current_id in MASTER.item_by_id or current.get("identity_status") in ("玩家已確認","公共已確認","成熟庫已確認"):continue
+                if current_id in MASTER.item_by_id and current.get("stage") and current.get("stage") not in ("","None"):
+                    # 段位品ID不覆蓋
+                    continue
             changed=(current_id!=rec["id"] or str(row.get(f"{side}_name") or "")!=rec["name"])
             row[f"{side}_item_id"]=rec["id"];row[f"{side}_name"]=rec["name"]
             row[f"{side}_stage"]=rec["stage"];row[f"{side}_kind"]=rec["kind"]
@@ -1878,7 +1883,7 @@ def build_identity_suspect_report(rows=None):
             if "曾受舊整列記憶影響" in str(issue):
                 suspects.append({"type":"舊整列記憶無法安全自動還原","row":idx,"side":"待確認","raw":str(issue),
                                  "current_id":"","text_resolves_to":"","source_file":r.get("source_file"),"row_index":r.get("row_index")})
-    report={"version":"V6.1.6","generated_at":datetime.datetime.now().isoformat(timespec="seconds"),
+    report={"version":"V6.1.7","generated_at":datetime.datetime.now().isoformat(timespec="seconds"),
             "policy":"只報告，不自動改ID；請依原始切片確認。","count":len(suspects),"suspects":suspects}
     try:
         with open(IDENTITY_SUSPECT_PATH,"w",encoding="utf-8") as f:json.dump(report,f,ensure_ascii=False,indent=2)
@@ -3728,14 +3733,14 @@ def make_round_panel(parent,bg="#fffef9",outline=CUTE_BORDER,radius=22,padding=1
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("黑沙航海助手 V6.1.6")
+        self.title("黑沙航海助手 V6.1.7")
         try:
             if os.path.exists(APP_ICON_PATH):self.iconbitmap(APP_ICON_PATH)
         except Exception:pass
         self.minsize(930,680)
         smart_window(self,"main","1080x780",980,700)
         self.state_data=STORE.load()
-        try:ensure_version_backup("V6.1.6")
+        try:ensure_version_backup("V6.1.7")
         except Exception:pass
         migrate_confirmed_duplicate_ids_v584()
         archive_legacy_context_rules_v585()
@@ -3958,7 +3963,7 @@ class App(tk.Tk):
                   relief="flat",command=self.open_advanced_tools,padx=16,pady=8).pack(side="right")
         tk.Button(tools,text="🌱 新手起航指南",font=(FONT,12,"bold"),bg=CUTE_GREEN_SOFT,fg=CUTE_GREEN,
                   relief="flat",command=self.open_onboarding,padx=14,pady=8).pack(side="right",padx=6)
-        tk.Label(page,text=f"資料庫：V5.85.7完整成熟後台｜118段位品｜91點位｜{len(MASTER.aliases)}筆名稱別名　　版本 V6.1.6",
+        tk.Label(page,text=f"資料庫：V5.85.7完整成熟後台｜118段位品｜91點位｜{len(MASTER.aliases)}筆名稱別名　　版本 V6.1.7",
                  font=(FONT,10),bg=CUTE_BG,fg="#8a948e").pack(pady=(0,18))
 
     def open_onboarding(self,auto=False):
@@ -4205,7 +4210,7 @@ class App(tk.Tk):
             messagebox.showinfo("還原完成",f"✓ 已還原 {r['count']} 個檔案。\n請關閉並重新開啟助手。\n\n還原前的安全備份：\n{r['safety_backup']}",parent=win)
             refresh_health()
         def do_bundle():
-            try:r=create_support_bundle("V6.1.6")
+            try:r=create_support_bundle("V6.1.7")
             except Exception as ex:messagebox.showerror("產生失敗",str(ex),parent=win);return
             messagebox.showinfo("AI自助求救包",f"✓ 已整理 {r['included']} 個必要資料檔。\n不含任何圖片。\n\n把ZIP上傳到玩家自己的ChatGPT，再照包內提問文字描述問題：\n{r['path']}",parent=win)
             try:
@@ -7408,8 +7413,12 @@ class App(tk.Tk):
                         if rr.get("point_id") and rr.get("input_item_id") and rr.get("output_item_id"):
                             rr["issues"]=_issues_after_core_confirmation(rr)
                             if not rr["issues"]:rr["status"]="候選可用"
-                        # 手動修改後執行基於核心身份的去重，處理 A/B 版截圖的重複項
-                        rows[:]=deduplicate_by_core_identity(rows)
+                        # V6.1.7：只在修改了核心身份時才執行去重，避免誤刪記錄
+                        core_changed=(str(before.get("point_id") or "")!=str(rr.get("point_id") or "") or
+                                      str(before.get("input_item_id") or "")!=str(rr.get("input_item_id") or "") or
+                                      str(before.get("output_item_id") or "")!=str(rr.get("output_item_id") or ""))
+                        if core_changed:
+                            rows[:]=deduplicate_by_core_identity(rows)
                         save_current_batch_rows(rows)
                         route_sync=sync_planned_route_identity_after_edit(self.state_data,before,rr)
                         if route_sync.get("updated") or route_sync.get("completed_skipped"):STORE.save(self.state_data)
