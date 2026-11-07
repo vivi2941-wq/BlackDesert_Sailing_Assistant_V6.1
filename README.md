@@ -1,4 +1,4 @@
-# ⚓ 黑色沙漠航海助手 V6.1
+# ⚓ 黑色沙漠航海助手 V6.1.6
 
 ### Black Desert Sailing Assistant｜又名：海豹助手 🦭
 
@@ -6,7 +6,7 @@
 
 **如果你只是想下載來用，點這裡：**
 
-### [⬇️ 下載 V6.1 玩家版（Windows）](https://github.com/vivi2941-wq/BlackDesert_Sailing_Assistant_V6.1/releases/tag/V6.1)
+### [⬇️ 下載 V6.1.6 玩家版（Windows）](https://github.com/vivi2941-wq/BlackDesert_Sailing_Assistant_V6.1/releases/tag/V6.1.6)
 
 下載後：
 1. 解壓縮 ZIP 檔案
@@ -393,12 +393,18 @@ OCR 確認完成後：
 
 ---
 
-# 📜 V6.1 版本更新
+# 📜 V6.1.6 版本更新
 
-* 🔧 修復手動修改交換比例後沒有套用的問題
-* 🧺 添加今日航程完成頁 5 階溢出批量確認賣出按鈕
-* 🧭 修復路線跑到一半無法調整站點的問題
-* 📊 添加 OCR 報告生成功能，用於數據徵集
+**1. 學習系統改進 - 支持ID遷移**
+
+**2. 修復手動修改沒反應的問題**
+
+**3. 修復別名邏輯干擾視覺學習**
+
+**4. 修復縮排錯誤**
+
+**5. 放寬別名ID檢查**
+
 
 ---
 
