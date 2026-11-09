@@ -1368,8 +1368,9 @@ def build_confirmed_raw_identity_map():
         iid=str(rec.get("id") or "");name=str(rec.get("name") or "").strip()
         if not raw_key or not iid or not name:continue
         target=registry.get(iid) or {}
-        # 檢查ID是否存在，如果不存在嘗試根據名稱查找新ID
-        if iid not in MASTER.item_by_id and target.get("identity_status") not in ("玩家已確認","公共已確認","成熟庫已確認"):
+        # V6.1.7：放寬ID檢查條件，允許公共種子數據中的物品被學習
+        # 檢查ID是否存在於registry（包含公共種子數據），如果不存在嘗試根據名稱查找新ID
+        if iid not in MASTER.item_by_id and iid not in registry and target.get("identity_status") not in ("玩家已確認","公共已確認","成熟庫已確認"):
             # ID不存在，嘗試根據名稱查找新ID
             norm_name=_norm_identity_name(name)
             if norm_name in name_to_id:
