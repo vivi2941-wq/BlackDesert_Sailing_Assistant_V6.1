@@ -121,7 +121,8 @@ class ExchangeCardParser:
     def _resolve_item_loose(self,text,expected_stage=None):
         _trace_raw=text
         raw=str(text or "").strip()
-        cleaned=re.sub(r"^[\[\【（(]?\s*[0-7]\s*(?:階|楷|陪|隋)?\s*段\s*[\]\】）)]?\s*","",raw).strip()
+        # V6.1.7：添加"踏"到階段標籤匹配，OCR常將"階段"讀成"踏段"
+        cleaned=re.sub(r"^[\[\【（(]?\s*[0-7]\s*(?:階|楷|陪|隋|踏)?\s*段\s*[\]\】）)]?\s*","",raw).strip()
         direct=self.master.resolve_item(cleaned)
         if direct.get("matched"):
             return direct
@@ -237,7 +238,8 @@ class ExchangeCardParser:
         texts=[x["text"] for x in lines if x["text"]]
         staged=[]
         for x in lines:
-            m=re.search(r"(?:^|\s)[\[\【（(]?\s*([0-7])\s*(?:階|楷|陪|隋)?\s*段\s*[\]\】）)]?\s*(.+)",x["text"])
+            # V6.1.7：添加"踏"到階段標籤匹配，OCR常將"階段"讀成"踏段"
+            m=re.search(r"(?:^|\s)[\[\【（(]?\s*([0-7])\s*(?:階|楷|陪|隋|踏)?\s*段\s*[\]\】）)]?\s*(.+)",x["text"])
             if not m:
                 continue
             stage=int(m.group(1))
@@ -343,7 +345,8 @@ class ExchangeCardParser:
             t=x.get("text","")
             # 不同電腦/UI縮放常漏掉左括號，或把「階段」讀成「楷段」。
             # 段位標籤也可能和品名拆成相鄰兩段，仍應把正式品名送進成熟ID庫。
-            m=re.search(r"(?:^|\s)[\[\【（(]?\s*([0-7])\s*(?:階|楷|陪|隋)?\s*段\s*[\]\】）)]?\s*(.*)",t)
+            # V6.1.7：添加"踏"到階段標籤匹配，OCR常將"階段"讀成"踏段"
+            m=re.search(r"(?:^|\s)[\[\【（(]?\s*([0-7])\s*(?:階|楷|陪|隋|踏)?\s*段\s*[\]\】）)]?\s*(.*)",t)
             if m:
                 stage=int(m.group(1))
                 raw=m.group(2).strip()
@@ -390,7 +393,8 @@ class ExchangeCardParser:
         """
         def clean_text(t):
             t=str(t or "").strip()
-            t=re.sub(r"^[\[\【（(]?\s*[0-7]\s*(?:階|楷|陪|隋)?\s*段\s*[\]\】）)]?\s*","",t)
+            # V6.1.7：添加"踏"到階段標籤匹配，OCR常將"階段"讀成"踏段"
+            t=re.sub(r"^[\[\【（(]?\s*[0-7]\s*(?:階|楷|陪|隋|踏)?\s*段\s*[\]\】）)]?\s*","",t)
             t=re.sub(r"^[0-9]+\s*[|｜]?\s*","",t)
             # UI常見殘留
             t=re.sub(r"[⚓①②③④⑤⑥⑦⑧⑨⑩]","",t)
