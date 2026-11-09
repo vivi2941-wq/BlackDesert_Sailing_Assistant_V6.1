@@ -1232,8 +1232,14 @@ def apply_visual_item_learning(rows):
                                f"{side.upper()}文字身份與圖片學習衝突" not in str(q)]
             if current_id and current_id!=visual_id:
                 current_registry=registry_by_id.get(current_id) or {}
-                # 正式主表或玩家親自確認過的文字身份不能被圖片靜默推翻；衝突交回人工看圖。
-                current_is_trusted=(current_id in MASTER.item_by_id or current_registry.get("identity_status") in ("玩家已確認","公共已確認","成熟庫已確認"))
+                # V6.1.7：如果文字ID在MASTER.item_by_id中，這是正式的驗證ID，優先於視覺學習
+                # 視覺學習可能從錯誤的欄位學習，或圖片特徵相似導致誤判
+                # 正式主表的ID不應該被視覺學習推翻，忽略衝突
+                if current_id in MASTER.item_by_id:
+                    # 正式ID優先，忽略視覺學習衝突
+                    continue
+                # 玩家親自確認過的文字身份也不能被圖片靜默推翻；衝突交回人工看圖。
+                current_is_trusted=current_registry.get("identity_status") in ("玩家已確認","公共已確認","成熟庫已確認")
                 if current_is_trusted:
                     taught=confirmed_raw.get((side,_norm_identity_name(raw)))
                     if not taught or str(taught.get("id") or "")!=visual_id:
