@@ -1330,7 +1330,8 @@ def build_ocr_learning_history(records=None):
 def build_confirmed_raw_identity_map():
     """V5.85.4：只學習「同一OCR原文只有一個已確認答案」的錯字修正。
     V6.1.6：當ID不存在時，根據名稱查找registry中的新ID，支持ID遷移。
-    V6.1.7：放寬學習應用條件，允許已確認ID被學習記錄覆蓋（只有段位品ID不覆蓋）。"""
+    V6.1.7：放寬學習應用條件，允許已確認ID被學習記錄覆蓋（只有段位品ID不覆蓋）。
+    V6.1.7：當raw只是數字時，使用上下文（交換點+output物品）來推斷input物品。"""
     registry={str(x.get("item_id") or ""):x for x in _load_item_registry().get("items",[]) if isinstance(x,dict)}
     # 建立名稱到ID的映射，用於ID遷移
     name_to_id={}
@@ -1341,6 +1342,23 @@ def build_confirmed_raw_identity_map():
                 norm_nm=_norm_identity_name(nm)
                 if norm_nm:
                     name_to_id[norm_nm]=item_id
+    # 建立上下文映射：當raw只是數字時，使用(point_id, output_item_id)來推斷input物品
+    context_to_input_ids={}
+    for rec in load_evidence_identity_corrections():
+        if not isinstance(rec,dict):continue
+        side=str(rec.get("side") or "")
+        if side!="input":continue
+        raw_key=_norm_identity_name(rec.get("raw"))
+        # 只處理純數字的raw
+        if not raw_key.isdigit():continue
+        point_id=str(rec.get("point_id") or "")
+        output_id=str(rec.get("output_item_id") or "")
+        input_id=str(rec.get("id") or "")
+        if not point_id or not output_id or not input_id:continue
+        key=(point_id, output_id)
+        if key not in context_to_input_ids:
+            context_to_input_ids[key]=set()
+        context_to_input_ids[key].add(input_id)
     choices={}
     for rec in load_evidence_identity_corrections():
         if not isinstance(rec,dict):continue
@@ -1364,7 +1382,7 @@ def build_confirmed_raw_identity_map():
         choices.setdefault((side,raw_key),{})[(iid,name)]=rec
     learned={}
     for key,targets in choices.items():
-        # 同一原文曾被確認成多種物品時，絕不自動套用。
+        # 同一原文曾被確認成多種物品時，絕不自動套用
         if len(targets)==1:
             (iid,name),rec=next(iter(targets.items()))
             learned[key]={"id":iid,"name":name,"stage":str(rec.get("stage") or ""),
@@ -1375,12 +1393,75 @@ def apply_confirmed_raw_identity_learning(rows):
     learned=build_confirmed_raw_identity_map()
     if not learned:return 0
     registry={str(x.get("item_id") or ""):x for x in _load_item_registry().get("items",[]) if isinstance(x,dict)}
+    # V6.1.7：建立上下文映射，用於raw只是數字時推斷input物品
+    context_to_input_ids={}
+    for rec in load_evidence_identity_corrections():
+        if not isinstance(rec,dict):continue
+        side=str(rec.get("side") or "")
+        if side!="input":continue
+        raw_key=_norm_identity_name(rec.get("raw"))
+        if not raw_key.isdigit():continue
+        point_id=str(rec.get("point_id") or "")
+        output_id=str(rec.get("output_item_id") or "")
+        input_id=str(rec.get("id") or "")
+        if not point_id or not output_id or not input_id:continue
+        key=(point_id, output_id)
+        if key not in context_to_input_ids:
+            context_to_input_ids[key]=set()
+        context_to_input_ids[key].add(input_id)
     applied=0
     for row in rows or []:
         for side in ("input","output"):
             raw_key=_norm_identity_name(row.get(f"{side}_raw"))
             rec=learned.get((side,raw_key))
-            if not rec:continue
+            if not rec:
+                # V6.1.7：當raw只是數字且沒有直接學習記錄時，優先使用視覺學習判斷
+                if side=="input" and raw_key.isdigit():
+                    # 嘗試使用視覺學習判斷
+                    sig=_visual_item_signature(row, side)
+                    if sig:
+                        memory=[x for x in load_visual_item_memory() if isinstance(x,dict)]
+                        if memory:
+                            # 按物品ID分組
+                            grouped={}
+                            for m in memory:
+                                if m.get("side")!=side:continue
+                                score,gray,color=_visual_signature_score(sig, m.get("signature") or {})
+                                iid=str(m.get("item_id") or "")
+                                if iid and (iid not in grouped or score>grouped[iid][0]):
+                                    grouped[iid]=(score,gray,color,m)
+                            if grouped:
+                                # 使用視覺相似度最高的物品
+                                best_iid=sorted(grouped.items(), key=lambda x: x[1][0], reverse=True)[0][0]
+                                if best_iid:
+                                    best_name=registry.get(best_iid, {}).get("confirmed_name") or registry.get(best_iid, {}).get("names", [""])[0]
+                                    row[f"{side}_item_id"]=best_iid
+                                    row[f"{side}_name"]=best_name
+                                    row.setdefault("identity_source",{})[side]="視覺學習判斷"
+                                    row["issues"]=[q for q in row.get("issues",[]) if side.upper() not in str(q) and "品項未匹配ITEM_ID" not in str(q)]
+                                    if not row["issues"] and row.get("point_id") and row.get("input_item_id") and row.get("output_item_id"):
+                                        row["status"]="候選可用"
+                                    applied+=1
+                                    continue
+                    # 如果視覺學習沒有匹配，使用上下文推斷
+                    point_id=str(row.get("point_id") or "")
+                    output_id=str(row.get("output_item_id") or "")
+                    if point_id and output_id:
+                        context_key=(point_id, output_id)
+                        context_ids=context_to_input_ids.get(context_key, set())
+                        if len(context_ids)==1:
+                            # 上下文明確時，使用該ID
+                            inferred_id=list(context_ids)[0]
+                            inferred_name=registry.get(inferred_id, {}).get("confirmed_name") or registry.get(inferred_id, {}).get("names", [""])[0]
+                            if inferred_id:
+                                row[f"{side}_item_id"]=inferred_id
+                                row[f"{side}_name"]=inferred_name
+                                row.setdefault("identity_source",{})[side]="上下文推斷"
+                                row["issues"]=[q for q in row.get("issues",[]) if side.upper() not in str(q) and "品項未匹配ITEM_ID" not in str(q)]
+                                if not row["issues"] and row.get("point_id") and row.get("input_item_id") and row.get("output_item_id"):
+                                    row["status"]="候選可用"
+                                applied+=1
+                continue
             current_id=str(row.get(f"{side}_item_id") or "")
             # V6.1.7：放寬學習應用條件，允許已確認ID被學習記錄覆蓋
             # 只有當ID在MASTER.item_by_id中且是段位品時，才不覆蓋
