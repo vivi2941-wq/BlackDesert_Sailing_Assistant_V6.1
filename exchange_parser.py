@@ -535,6 +535,10 @@ class ExchangeCardParser:
             if cleaned:
                 name_parts.append(cleaned)
         name=name_parts[0] if name_parts else ""
+        # V6.1.7：如果沒有找到物品名稱，但有純數字，將數字作為raw_name保留
+        # 這樣學習系統可以根據上下文推斷物品（如銅鑄塊/鋅鑄塊/鉛鑄塊）
+        if not name and nums:
+            name=str(nums[0])
         # 一般材料 INPUT 常同時讀到「交換需求量｜物品圖示堆疊數」，例如
         # 羊毛｜200｜1。前者才是交換比例；舊規則取最後一個數字，會固定
         # 把 100/1、200/1 誤判為 1。OUTPUT 保留原本取尾端數量的行為。
