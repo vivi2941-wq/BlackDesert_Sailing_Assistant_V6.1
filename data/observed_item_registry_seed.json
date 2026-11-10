@@ -260,6 +260,19 @@
       "evidence_count": 0
     },
     {
+      "item_id": "ITEM_PUBLIC_0001",
+      "names": [
+        "酷斯海賊團的遺物(協商上級)",
+        "酷斯海贼团的遗物",
+        "酷斯海賊團的遺物"
+      ],
+      "kind": "特殊交換品",
+      "stage": "",
+      "identity_status": "公共已確認",
+      "confirmed_name": "酷斯海賊團的遺物(協商上級)",
+      "evidence_count": 0
+    },
+    {
       "item_id": "ITEM_PUBLIC_0043",
       "names": [
         "蘆薈"
