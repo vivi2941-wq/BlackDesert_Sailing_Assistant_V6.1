@@ -696,8 +696,10 @@ class ExchangeCardParser:
         # 一般段位交換若畫面沒有獨立讀到數量，不能偷偷猜；留空讓人工複核。
         # V5.10：表格真正需要辨識的比例只有 OUTPUT 2/3階。
         # 前項固定為1；其他階走既有固定規則，不需要截圖OCR。
+        # V6.1.7：3→4階交換有固定規則1:2，不需要OCR辨識
         ratio_manual_both=bool(not (inp and out))
-        ratio_needed=bool((out and out.get("stage") in (2,3)) or ratio_manual_both)
+        ratio_needed=bool((out and out.get("stage") in (2,3)) or ratio_manual_both or
+                         (inp and out and int(inp.get("stage") or 0)==3 and int(out.get("stage") or 0)==4))
         ratio_input=(input_quantity if ratio_manual_both else 1) if ratio_needed else ""
         # 2/3階比例仍只接受單位數；特殊交換（例如烏鴉硬幣）可保留 3 位數。
         ratio_output=(output_quantity if ratio_needed and str(output_quantity).isdigit()
